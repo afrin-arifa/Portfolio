@@ -16,7 +16,7 @@ var typed = new Typed('#element', {
 	function animate(timestamp) {
 	  if (!startTime) startTime = timestamp;
 	  var progress = timestamp - startTime;
-	  var stepPercentage = progress / 1000; // Dividing by duration in milliseconds (1000ms = 1s)
+	  var stepPercentage = progress / 1000;
 	  
 	  if (stepPercentage < 1) {
 		animatedValue = per * stepPercentage;
