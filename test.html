@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+             margin: 0px;
+             padding: 0px;
+        }
+
+        .slider-container{
+            max-width: 700px;
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+            .cv{
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                cursor: pointer;
+                color: white;
+                background-color: aqua;
+                padding: 5px;
+                border-radius: 5px;
+                z-index: 2;
+                &.next{
+                    right: 10px;
+                }
+                &.prev{
+                    left: 10px;
+                }
+            }
+            .slider-inner{
+                display: flex;
+                flex-wrap: nowrap;
+                transition: 0.3s;
+                width: 100%;
+                img{
+                    height: 500px;
+                    width: 100%;
+                    object-fit: cover;
+                    flex-shrink: 0;
+                    flex-grow: 1;
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <div class="cv next">NEXT</div>
+        <div class="cv prev">PREV</div>
+        <div class="slider-inner">
+            <img src="https://unsplash.it/700/400">
+            <img src="https://unsplash.it/500/200">
+            <img src="https://unsplash.it/500/300">
+        </div>
+    </div>
+
+
+    <div class="slider-container">
+        <div class="cv next">NEXT</div>
+        <div class="cv prev">PREV</div>
+        <div class="slider-inner">
+            <img src="https://unsplash.it/700/400">
+            <img src="https://unsplash.it/500/200">
+            <img src="https://unsplash.it/500/300">
+        </div>
+    </div>
+
+
+    <script>
+        const getAllSliderCon = document.querySelectorAll(".slider-container");
+
+        for(let eachSlider of getAllSliderCon){
+            const getSliderInner = eachSlider.querySelector(".slider-inner");
+            const getNextBtn = eachSlider.querySelector(".next");
+            const getPrevBtn = eachSlider.querySelector(".prev");
+            const maxSlider = getSliderInner.querySelectorAll("img").length;
+            let activeSlicer = 0;
+            let sliderWidth = getSliderInner.clientWidth;
+
+
+
+
+            getNextBtn.addEventListener("click", function(){
+                activeSlicer++;
+                if(activeSlicer >= maxSlider) activeSlicer = 0;
+                getSliderInner.style.transform = `translateX(-${sliderWidth * activeSlicer}px)`;
+            })
+
+            getPrevBtn.addEventListener("click", function(){
+                activeSlicer--;
+                if(activeSlicer < 0) activeSlicer = maxSlider - 1;
+                getSliderInner.style.transform = `translateX(-${sliderWidth * activeSlicer}px)`;
+            })
+
+            function sliderFun(){
+                sliderWidth = getSliderInner.clientWidth;
+            }
+
+            window.addEventListener("resize", sliderFun);
+        }
+
+
+
+    </script>
+</body>
+</html>
