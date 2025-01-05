@@ -28,3 +28,9 @@ $('#number3').jQuerySimpleCounter({end: 3,duration: 2000});
 $('#number4').jQuerySimpleCounter({end: 2,duration: 2500});
 
 
+var typed = new Typed('#element', {
+	strings: ['Web Developer.', 'Graphic Designer.', 'Web Designer.', 'App Developer.'],
+	typeSpeed: 30,
+  });
+
+

@@ -140,6 +140,10 @@ a.navbar-btn{
 	font-weight: 700;
 	text-decoration: none;
 }
+a.navbar-btn:hover{
+	color:rgb(240, 25, 25);
+	background:#001F46;
+}
 
 .hero {
 	background-color: #0b75b1;
@@ -181,7 +185,7 @@ a.theme-btn {
 }
 
 .hero-content h1 {
-    font-size: 65px;
+    font-size: 60px;
     color: #fff;
     margin-bottom: 18px;
     margin-top: -10px;
@@ -299,6 +303,7 @@ a.mainTheme-btn {
     border-radius: 8px;
 	position: relative;
 	color: #73d7f5;
+	transition: all 0.8s ease-in-out;
 	&::before{
 		content: "";
 		position: absolute;
@@ -307,7 +312,7 @@ a.mainTheme-btn {
 		background-image: url(images-soft/arrow-right-solid-blue.svg);
 		background-repeat: no-repeat;
 		left: 14px;
-		transition: all 0.5s ease-in-out;
+		transition: all 0.8s ease-in-out;
     	top: 50%;
        	transform: translateY(-50%);
 	}
@@ -320,7 +325,7 @@ a.mainTheme-btn {
 		opacity: 0;
 		background-image: url(images-soft/arrow-right-solid-blue.svg);
 		background-repeat: no-repeat;
-		transition: all 0.5s ease-in-out;
+		transition: all 0.8s ease-in-out;
 		top: 50%;
         transform: translateY(-50%);
 		
@@ -328,7 +333,7 @@ a.mainTheme-btn {
 	&:hover{
 			padding-right: 55px;
 			padding-left: 20px;
-			background: #52A93C !important;
+			background: #001F46 !important;
 			color: #fff !important;
 			transition: all 0.8s ease-in-out;
 	}
@@ -579,10 +584,32 @@ a.mainTheme-btn {
     color: white;
     text-align: center;
     box-shadow: 4px 4px 15px rgba(26, 35, 126, 0.2);
+	border-radius: 9px 0 0 9px;
 }
 
 .small-heading{
 	font-size: 20px;
 	font-weight: 700;
 	margin-bottom: 8px;
+}
+
+#element{
+	color: #136802;
+	font-size: 25px;
+	font-weight: 700;
+}
+
+.dp-img-box {
+    background: #fff;
+    text-align: center;
+    padding: 25px 15px;
+    border-radius: 8px;
+    height: 100%;
+    box-shadow: rgb(0 0 0 / .1) 0 1px 3px 0,rgb(0 0 0 / .06) 0 1px 2px 0;
+}
+
+.dp-img-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
